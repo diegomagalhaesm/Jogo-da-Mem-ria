@@ -1,0 +1,152 @@
+/*@media screen and (max-width: 750px) {
+	.deck, .score-panel {
+		width: ;
+	}
+}*/
+
+@media screen and (min-width: 360px){
+	.deck, .score-panel {
+		width: 85%;
+	}
+
+	.deck{
+		min-height: 360px;
+	}
+
+	.score-panel {
+		font-size: 16px;
+	}
+
+	h1 {
+		font-size: 35px;
+	}
+
+	.deck .card {
+		margin: 0.5px;
+		border-radius: 10px;
+		width: 20%;
+		height: 50px;
+	}
+
+	.deck .card.show, .deck .card.match {
+    	font-size: 20px;
+	}
+
+	.modal-content {
+		font-size: 15px;
+		height: 280px;
+	}
+
+	.new-game {
+		margin-top: 0;
+		font-size: 15px;
+	}
+}
+
+@media screen and (min-width: 450px) {
+	.deck .card {
+		height: 55px;
+	}
+	.score-panel {
+		font-size: 20px;
+	}
+
+	.deck .card.show, .deck .card.match {
+    	font-size: 23px;
+	}
+
+	.new-game {
+		font-size: 18px;
+	}
+
+	.modal-content {
+		font-size: 18px;
+		height: 300px;
+	}	
+
+@media screen and (min-width: 520px) {
+	.deck .card {
+		height: 65px;
+	}
+
+	.deck .card.show, .deck .card.match {
+    font-size: 25px;
+	}
+
+@media screen and (min-width: 550px) {
+	.deck .card {
+		margin: 8px;
+		height: 70px;
+	}
+}
+
+@media screen and (min-width: 660px) {
+	h1 {
+		font-size: 50px;
+	}
+
+	.deck .card {
+		margin: 10px;
+		height: 85px;
+	}
+
+	.deck .card.show, .deck .card.match {
+    font-size: 30px;
+	}
+
+	.new-game, .modal-content {
+		font-size: 22px;
+	}
+
+	.modal-content {
+		height: 320px;
+	}	
+}
+
+@media screen and (min-width: 780px) {
+	.score-panel {
+		font-size: 25px;
+	}
+
+	.deck .card {
+		margin: 12px;
+		height: 90px;
+	}
+
+	.deck .card.show, .deck .card.match {
+    font-size: 32px;
+	}
+}
+
+@media screen and (min-width: 850px) {
+	.deck .card {
+		height: 100px;
+	}
+
+	.deck .card.show, .deck .card.match {
+    font-size: 35px;
+	}
+
+	.modal-content {
+		width: 550px;
+	}	
+
+	.deck, .score-panel {
+		width: 655px;
+		margin-right: auto;
+		margin-left: auto;
+	}
+}
+
+/*
+@media screen and (min-width: 1030px) {
+	.deck .card {
+		height: 125px;
+	}
+
+	.deck .card.show, .deck .card.match {
+    font-size: 40px;
+	}
+
+	.deck, .score-panel
+}*/
