@@ -42,6 +42,10 @@ This code it free to use and edit how anyone wants it, but please at least credi
 
 - Thank you to Mike Wales, whom I got used the code from to start out my project. https://www.youtube.com/watch?v=_rUH-sEs68Y
 
-- Thanks to Chandu from Stackoverflow.com for the timer function. https://stackoverflow.com/questions/5517597/plain-count-up-timer-in-javascript?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa 
+- Thanks to Chandu from Stackoverflow.com for the timer function. https://stackoverflow.com/questions/5517597/plain-count-up-timer-in-javascript?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
+
+- Jqeury was used in this project https://ajax.googleapis.com
+
+- Icons such as the card images, stars, and reset button are from FontAwesome https://fontawesome.com/get-started
 
 
