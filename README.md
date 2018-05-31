@@ -5,28 +5,12 @@ The goal of this game is to match all 16 cards to win. You are scored with 1-3 s
 
 ## Table of Contents
 
-* [Instructions](#instructions)
-* [Contributing](#contributing)
-* [Download/Installation](#download/installation)
+* [Download and Installation](#download and installation)
 * [Contributors](#contributors)
 * [License](#license)
 * [Acknowledgments](#acknowledgments)
 
-## Instructions
-
-The starter project has some HTML and CSS styling to display a static version of the Memory Game project. You'll need to convert this project from a static project to an interactive one. This will require modifying the HTML and CSS files, but primarily the JavaScript file.
-
-To get started, open `js/app.js` and start building out the app's functionality
-
-For specific, detailed instructions, look at the project instructions in the [Udacity Classroom](https://classroom.udacity.com/me).
-
-## Contributing
-
-This repository is the starter code for _all_ Udacity students. Therefore, we most likely will not accept pull requests.
-
-For details, check out [CONTRIBUTING.md](CONTRIBUTING.md).
-
-## Download/installation
+## Download and installation
 
 To get a copy of this game, you can fork it from my GitHub, then you can clone it with GIT clone on a command propmt such as Git Bash, to your machine from YOUR fork of the game and can play it locally and edit it however you want.
 
