@@ -1,13 +1,15 @@
 // ~~~ This is an array with all the cards ~~~
-const cardsList = ["fa-paper-plane-o", "fa-paper-plane-o",
-			"fa-diamond", "fa-diamond",
-			"fa-bicycle", "fa-bicycle",
-			"fa-anchor", "fa-anchor",
-			"fa-bolt", "fa-bolt",
-			"fa-cube", "fa-cube",
-			"fa-leaf", "fa-leaf",
-			"fa-bomb", "fa-bomb",
-			];
+let cardsList = [
+  "fa-paper-plane-o",
+  "fa-diamond",
+  "fa-bicycle",
+  "fa-anchor",
+  "fa-bolt",
+  "fa-cube",
+  "fa-leaf",
+  "fa-bomb"
+];
+cardsList = cardsList.concat(cardsList);
 
 // Shuffle function from http://stackoverflow.com/a/2450976
 function shuffle(array) {
@@ -28,7 +30,7 @@ let min = document.querySelector(".min");
 let sec = document.querySelector(".sec");
 
 //	~~~ Timer function ~~~
-// Code from Stackoverflow with slight changes:https://stackoverflow.com/questions/5517597/plain-count-up-timer-in-javascript?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa 
+// Code from Stackoverflow with some changes: https://stackoverflow.com/questions/5517597/plain-count-up-timer-in-javascript?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa 
 function startTimer(){	
 	function setTime() {
 		++totalSec;
@@ -36,13 +38,9 @@ function startTimer(){
 		min.innerHTML = pad(parseInt(totalSec / 60));
 	}
 
-	function pad (val) {
+	function pad(val) {
 		let valString = val + "";
-		if (valString.length < 2) {
-			return "0" + valString;
-		} else {
-			return valString;
-		}
+		return valString.length < 2 ? `0${valString}` : valString
 	}
 	timer = setInterval(setTime, 1000)
 	
@@ -79,7 +77,7 @@ function resetStars() {
 function resetCards() {
 	const deck = document.querySelector(".deck");
 	allCards.forEach(function(card) {
-		card.classList.remove("match", "show", "open");
+		card.classList.remove("match", "show", "open", "noClick");
 		selectedCards = [];
 		matchedCards = [];
 
@@ -87,7 +85,7 @@ function resetCards() {
 }
 
 //  ~~~ Function that displays Modal ~~~
-function endGame () {
+function endGame() {
 	const modal = document.querySelector(".modal");
 	const modalContent = document.querySelector(".modal-content");
 	const messagePara = document.querySelector(".winning-message");
@@ -110,7 +108,7 @@ function endGame () {
 	timeMessage.innerText = "With a time of  " + min.innerHTML + ":" + sec.innerHTML+ "!"
 	messagePara.append(timeMessage);
 
-	//  ~~~ Refreshes page when "New Game" is clicked
+	//  ~~~ Refreshes page when "New Game" is clicked ~~~
 	newGame.addEventListener("click", function() {
 		location.reload();
 	});
@@ -123,13 +121,13 @@ function endGame () {
 }
 
 //	~~~ This function starts out the game ~~~
-function gameStart () {
+function gameStart() {
 	const deck = document.querySelector(".deck");
 	let deckHTML = shuffle(cardsList).map(function(card) {
 		return displayCards(card);
 	});
 	deck.innerHTML = deckHTML.join("");
-	startTimer();
+	//startTimer();
 }
 
 gameStart(); // calls the game to start
@@ -141,41 +139,44 @@ let selectedCards = [];
 let matchedCards = [];
 
 //  ~~~ Function that resets everything ~~~
-reset.addEventListener("click", function resetAll() {
-	moves.innerHTML = 0;
-	moveCounter = 0;
-	totalSec = 0;
-	stopTimer();
-	startTimer();
-	resetStars();
-	resetCards();
-});
+reset.addEventListener("click", resetBtn);
+	function resetBtn() {
+		moves.innerHTML = 0;
+		moveCounter = 0;
+		totalSec = 0;
+		sec.innerText = "00";
+		min.innerText = "00";
+		stopTimer();
+		resetStars();
+		resetCards();
+	}
 
 //	~~~ This function deals with the actual game's functionality. ~~~
 allCards.forEach(function(card) {
 	card.addEventListener('click', function(e) {
 
+		if (moveCounter == 0 && selectedCards.length === 0) {
+			startTimer();
+		}
+
 		//	~~~ add selected cards to an array and prevents double-click bug ~~~
-		if(!card.classList.contains("open") && !card.classList.contains("show") && !card.classList.contains("match")) {
+		if (!card.classList.contains("open") && !card.classList.contains("show") && !card.classList.contains("match")) {
 			card.classList.add('open', 'show');
 			selectedCards.push(card);
 		}
 
-			//	~~~ This if statement flips cards back down when they do not match over a 300 millisecond time span ~~~
-			if(selectedCards.length === 2) {
-				setTimeout(function() {
-					selectedCards.forEach(function(card) {
-						card.classList.remove("open", "show");
+			//	~~~ This if statement flips cards back down when they do not match over a 0.8 second time span ~~~
+			if (selectedCards.length === 2) {
+					allCards.forEach(function(card) {
+						card.classList.add("noClick");
 					});
-
-					selectedCards = [];
-					}, 1100);
-			}
-
-			//	~~~ This prevents the bug of matching 3 cards ~~~
-			while (selectedCards.length === 3) {
-				selectedCards.remove(selectedCards.length);
-			}
+					setTimeout(function() {
+						allCards.forEach(function(card) {
+							card.classList.remove("open", "show", "noClick");
+						});
+						selectedCards = [];
+						}, 800);
+				}
 
 			//	~~~ This starts the moves counter ~~~
 			if (selectedCards.length === 2 || matchedCards === 2) {
@@ -215,3 +216,10 @@ allCards.forEach(function(card) {
 			
 	});
 });
+
+
+	
+		
+
+
+

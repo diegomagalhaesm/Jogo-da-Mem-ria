@@ -71,13 +71,17 @@ h1 {
 
 .deck .card.open {
     transform: rotate(360deg);
-    transition: 0.8s ease;
+    transition: 0.5s ease;
     background: #00e8c1;
     cursor: default;
 }
 
 .deck .card.show {
     font-size: 33px;
+}
+
+.deck .card.noClick {
+    pointer-events: none;
 }
 
 .deck .card.match {
