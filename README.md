@@ -5,7 +5,7 @@ The goal of this game is to match all 16 cards to win. You are scored with 1-3 s
 
 ## Table of Contents
 
-* [Download and Installation](#download and installation)
+* [Download&Installation](#download&installation)
 * [Contributors](#contributors)
 * [License](#license)
 * [Acknowledgments](#acknowledgments)
