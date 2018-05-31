@@ -10,7 +10,7 @@ The goal of this game is to match all 16 cards to win. You are scored with 1-3 s
 * [License](#license)
 * [Acknowledgments](#acknowledgments)
 
-## Download and installation
+## Download&installation
 
 To get a copy of this game, you can fork it from my GitHub, then you can clone it with GIT clone on a command propmt such as Git Bash, to your machine from YOUR fork of the game and can play it locally and edit it however you want.
 
