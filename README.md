@@ -1,4 +1,4 @@
-- Link to GitHub page https://dn1524.github.io/Udacity-Memory-Game/ 
+- Link to GitHub page https://diegomagalhaesm.github.io/Jogo-da-Mem-ria/
 
 # Memory Game Project
 The goal of this game is to match all 16 cards to win. You are scored with 1-3 stars based on how many moves you make to complete the game. When you complete the game, a modal will appear showing your score and time. This game requires internet connection to load the icons such as the card icons, stars, and reset button.
